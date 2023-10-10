@@ -11,11 +11,11 @@ function App() {
           {publicRouters.map((routee, index) => {
             let Pages = routee.element;
 
-            let Layout = DefaultLayout
-            if(routee.layout){
-              Layout = routee.layout
-            }else if(routee.layout===null){
-              Layout = Fragment
+            let Layout = DefaultLayout;
+            if (routee.layout) {
+              Layout = routee.layout;
+            } else if (routee.layout === null) {
+              Layout = Fragment;
             }
             return (
               <Route

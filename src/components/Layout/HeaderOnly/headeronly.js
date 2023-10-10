@@ -1,4 +1,4 @@
-import Header from '../DefaultLayout/Header/header';
+import Header from '~/components/Layout/components/Header/header.js';
 function Headeronly({ children }) {
   return (
     <div>
