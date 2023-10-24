@@ -2,7 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 :root {
+  --primary: rgb(254, 44, 85);
+  --black: #000;
+  --white: #fff;
+  --text-color: #333;
+
   --default-layout-header-width: 1150px;
+  --default-layout-header-heigth: 60px;
+  --color-search-header: rgba(255, 255, 255, 0.253);
 }
 * {
   padding: 0;
@@ -31,6 +38,6 @@ input,
 }
 
 a[href] {
-  color: var(--text-color);
+  color: var(--white);
   text-decoration: none;
 }
