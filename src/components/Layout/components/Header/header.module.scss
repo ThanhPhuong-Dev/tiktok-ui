@@ -13,6 +13,7 @@
   width: var(--default-layout-header-width);
   width: 1150px;
   height: 100%;
+  // padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,10 +65,7 @@
   }
 }
 
-.search-result {
-  position: absolute;
-  left: 0;
-}
+
 .search__clear,
 .search__loading {
   position: absolute;
@@ -101,6 +99,20 @@
   color: #ccc;
   margin-left: 15px;
 }
-.header__action {
-  background-color: white;
+.action {
+  display: flex;
+  align-items: center;
+}
+
+
+//more-btn
+
+
+.more-btn {
+  color: var(--white);
+  background-color: transparent;
+  padding: 0px 8px;
+  font-size: 2rem;
+  margin-left: 15px;
+  cursor: pointer;
 }

@@ -7,5 +7,4 @@ function Wrapper({children}) {
         <div className={cx('wrapper')}>{children}</div>
     )
 }
-
 export default Wrapper;

@@ -1,0 +1,17 @@
+.more-list {
+  width: 224px;
+
+  .more-item {
+    color: var(--white);
+    margin-left: 0;
+    width: 100%;
+    line-height: 1.8rem;
+    text-align: start;
+
+    &:hover{
+        background: rgba(157, 158, 163, 0.361);
+    }
+  }
+  
+
+}

@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Button({
+function MyButton({
   to,
   href,
   children,
@@ -18,9 +18,10 @@ function Button({
   lagre = false,
   leftIcon,
   rightIcon,
+  className,
   ...passpros
 }) {
-  let Comp = 'Button';
+  let Comp = 'button';
 
   const pros = {
     onClick,
@@ -41,8 +42,9 @@ function Button({
     pros.href = href;
     Comp = 'a';
   }
-
+  
   const wrapper = cx('wrapper', {
+    [className] :className,
     primary,
     outline,
     small,
@@ -60,4 +62,4 @@ function Button({
   );
 }
 
-export default Button;
+export default MyButton;
