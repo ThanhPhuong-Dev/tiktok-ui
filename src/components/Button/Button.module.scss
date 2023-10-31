@@ -1,4 +1,5 @@
 .wrapper {
+  display: inline-flex;
   font-size: 1.6rem;
   font-weight: 700;
   min-width: 100px;
@@ -68,7 +69,7 @@
   padding: 8px 16px;
 }
 
-.lagre {
+.large {
   min-width: 150px;
   padding: 14px 16px;
 }

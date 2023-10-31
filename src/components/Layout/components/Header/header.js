@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
 import {
   faCircleXmark,
   faSpinner,
@@ -9,8 +10,15 @@ import {
   faEarthAsia,
   faCircleQuestion,
   faKeyboard,
+  faCloudArrowUp,
+  faGear,
+  faCoins,
+  faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react/headless';
+
+import HandlessTippy from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 import classNames from 'classnames/bind';
 import styles from './header.module.scss';
@@ -19,9 +27,11 @@ import { Wrapper as PopperWrapper } from '~/components/Popper/popper';
 import AccountItem from '~/components/AccountItem/accountItem';
 import MyButton from '~/components/Button/button';
 import Menu from '~/components/Popper/Menu/menu';
+import MenuItem from '~/components/Popper/Menu/menuItem';
 
 const cx = classNames.bind(styles);
 
+const currentUser = true;
 const MENU_ITEM = [
   {
     title: 'Language',
@@ -54,6 +64,34 @@ const MENU_ITEM = [
     icon: <FontAwesomeIcon icon={faKeyboard} />,
   },
 ];
+
+const userMenu = [
+  {
+    title: 'View Profile',
+    icon: <FontAwesomeIcon icon={faUser} />,
+    to: '/@phuong',
+  },
+  {
+    title: 'Get Coins',
+    icon: <FontAwesomeIcon icon={faCoins} />,
+    to: '/coin',
+  },
+  {
+    title: 'Settings',
+    icon: <FontAwesomeIcon icon={faGear} />,
+    to: '/settings',
+  },
+
+  ...MENU_ITEM,
+
+  {
+    title: 'LogOut',
+    icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+    to: '/logout',
+    separate:true,
+  },
+];
+
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
   return (
@@ -62,7 +100,8 @@ function Header() {
         <div className={cx('header__logo')}>
           <img src={images.logo} alt="Tiktok"></img>
         </div>
-        <Tippy
+
+        <HandlessTippy
           interactive
           visible={searchResult.length > 0}
           placement="bottom-end"
@@ -80,29 +119,56 @@ function Header() {
         >
           <div className={cx('header__search')}>
             <input placeholder="Search account and videos" spellCheck={false}></input>
-            <button className={cx('search__clear')}>
+            <div className={cx('search__clear')}>
               <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
+            </div>
             <FontAwesomeIcon icon={faSpinner} className={cx('search__loading')} />
 
             <button className={cx('search__btn')}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
           </div>
-        </Tippy>
+        </HandlessTippy>
 
         <div className={cx('action')}>
-          <MyButton text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
-            Upload
-          </MyButton>
-          <MyButton primary onClick={() => alert('Dang nhap thanh cong')}>
-            Log In
-          </MyButton>
+          {currentUser ? (
+            <>
+              <Tippy content="Upload Video" placement="bottom">
+                <button className={cx('action-btn')}>
+                  <FontAwesomeIcon icon={faCloudArrowUp} />
+                </button>
+              </Tippy>
 
-          <Menu items={MENU_ITEM}>
-            <button className={cx('more-btn')}>
-              <FontAwesomeIcon icon={faEllipsisVertical} />
-            </button>
+              <Tippy content="Message" placement="bottom">
+                <button className={cx('action-btn')}>
+                  <FontAwesomeIcon icon={faPaperPlane} />
+                </button>
+              </Tippy>
+            </>
+          ) : (
+            <>
+              <MyButton text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                Upload
+              </MyButton>
+              <MyButton primary onClick={() => alert('Dang nhap thanh cong')}>
+                Log In
+              </MyButton>
+            </>
+          )}
+          <Menu items={currentUser ? userMenu : MENU_ITEM}>
+            {currentUser ? (
+              <div className={cx('user-avatar')}>
+                <img
+                  className={cx('avatar')}
+                  src="https://scontent.fdad1-4.fna.fbcdn.net/v/t1.6435-9/31064309_258390688037005_2079259999468519424_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=7a1959&_nc_ohc=2em1TsbINSUAX_uqXDS&_nc_ht=scontent.fdad1-4.fna&_nc_e2o=s&oh=00_AfCII_xkGwo9uYlkNuLlugTmnWvO3AVgO-NluZ9Zrhwf7Q&oe=65596950"
+                  alt="Ho Van Thanhj Phuong"
+                ></img>
+              </div>
+            ) : (
+              <button className={cx('more-btn')}>
+                <FontAwesomeIcon icon={faEllipsisVertical} />
+              </button>
+            )}
           </Menu>
         </div>
       </div>

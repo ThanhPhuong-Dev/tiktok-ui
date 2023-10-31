@@ -10,7 +10,6 @@ function App() {
         <Routes>
           {publicRouters.map((routee, index) => {
             let Pages = routee.element;
-
             let Layout = DefaultLayout;
             if (routee.layout) {
               Layout = routee.layout;

@@ -8,6 +8,10 @@
     line-height: 1.8rem;
     text-align: start;
 
+    &.separate{
+      border-top: 2px solid #515151;
+    }
+
     &:hover{
         background: rgba(157, 158, 163, 0.361);
     }

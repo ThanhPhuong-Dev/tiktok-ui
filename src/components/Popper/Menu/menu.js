@@ -11,7 +11,6 @@ const cx = classNames.bind(styles);
 
 function Menu({ children, items = [] }) {
   const [history, setHistory] = useState([{ data: items }]);
-  console.log(history);
   const current = history[history.length - 1];
   const renderItem = () => {
     return current.data.map((item, index) => {
@@ -31,6 +30,7 @@ function Menu({ children, items = [] }) {
   };
   return (
     <Tippy
+      visible
       interactive
       delay={[0, 700]}
       placement="bottom-end"
@@ -41,7 +41,7 @@ function Menu({ children, items = [] }) {
               <Language
                 title="Language"
                 onBack={() => {
-                  setHistory(history.splice(0, history.length - 1));
+                  setHistory((prev) => prev.slice(0, prev.length - 1));
                 }}
               ></Language>
             )}
@@ -49,6 +49,9 @@ function Menu({ children, items = [] }) {
           </PopperWrapper>
         </div>
       )}
+      onHide={() => {
+        setHistory(history.splice(0, 1));
+      }}
     >
       {children}
     </Tippy>
