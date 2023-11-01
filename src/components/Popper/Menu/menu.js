@@ -30,10 +30,10 @@ function Menu({ children, items = [] }) {
   };
   return (
     <Tippy
-      visible
       interactive
       delay={[0, 700]}
       placement="bottom-end"
+      offset={[12,8]}
       render={(attrs) => (
         <div className={cx('more-list')} tabIndex="-1" {...attrs}>
           <PopperWrapper>

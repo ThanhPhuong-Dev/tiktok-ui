@@ -28,6 +28,8 @@ import AccountItem from '~/components/AccountItem/accountItem';
 import MyButton from '~/components/Button/button';
 import Menu from '~/components/Popper/Menu/menu';
 import MenuItem from '~/components/Popper/Menu/menuItem';
+import { InBox, Message } from '~/components/Icon/icon';
+import Images from '~/components/Image/image';
 
 const cx = classNames.bind(styles);
 
@@ -88,7 +90,7 @@ const userMenu = [
     title: 'LogOut',
     icon: <FontAwesomeIcon icon={faRightFromBracket} />,
     to: '/logout',
-    separate:true,
+    separate: true,
   },
 ];
 
@@ -133,15 +135,24 @@ function Header() {
         <div className={cx('action')}>
           {currentUser ? (
             <>
-              <Tippy content="Upload Video" placement="bottom">
+              {/* <Tippy content="Upload Video" placement="bottom">
                 <button className={cx('action-btn')}>
                   <FontAwesomeIcon icon={faCloudArrowUp} />
                 </button>
-              </Tippy>
+              </Tippy> */}
+              <MyButton text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                Upload
+              </MyButton>
 
               <Tippy content="Message" placement="bottom">
+                <a href="/message" className={cx('action-btn')}>
+                  <Message></Message>
+                </a>
+              </Tippy>
+
+              <Tippy content="InBox" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faPaperPlane} />
+                  <InBox></InBox>
                 </button>
               </Tippy>
             </>
@@ -158,11 +169,12 @@ function Header() {
           <Menu items={currentUser ? userMenu : MENU_ITEM}>
             {currentUser ? (
               <div className={cx('user-avatar')}>
-                <img
+                <Images
                   className={cx('avatar')}
                   src="https://scontent.fdad1-4.fna.fbcdn.net/v/t1.6435-9/31064309_258390688037005_2079259999468519424_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=7a1959&_nc_ohc=2em1TsbINSUAX_uqXDS&_nc_ht=scontent.fdad1-4.fna&_nc_e2o=s&oh=00_AfCII_xkGwo9uYlkNuLlugTmnWvO3AVgO-NluZ9Zrhwf7Q&oe=65596950"
                   alt="Ho Van Thanhj Phuong"
-                ></img>
+                  fallback="https://lh3.googleusercontent.com/a/ACg8ocLe4mP_-W2IUnPFQcmaCaCdzdjqg3p-vuqmutNQrPRc=s360-c-no"
+                ></Images>
               </div>
             ) : (
               <button className={cx('more-btn')}>
