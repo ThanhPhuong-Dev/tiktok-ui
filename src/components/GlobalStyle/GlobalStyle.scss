@@ -2,69 +2,101 @@
 // @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 :root {
-  --primary: rgb(254, 44, 85);
-  --black: #000;
-  --white: #fff;
-  --text-color: #333;
+    --primary: rgb(254, 44, 85);
+    --black: #000;
+    --white: #fff;
+    --text-color: #333;
 
-  --default-layout-header-width: 1150px;
-  --default-layout-header-heigth: 60px;
-  --color-search-header: rgba(255, 255, 255, 0.253);
+    --font-family: 'TikTokFont', sans-serif;
+    --default-layout-header-width: 1150px;
+    --default-layout-header-heigth: 60px;
+    --color-search-header: rgba(255, 255, 255, 0.253);
 }
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 :root {
-  --black: #000;
-  --text-color: #fff;
+    --black: #000;
+    --text-color: #fff;
 }
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  
-  font-family: 'TikTokFont', sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-y: overlay;
+}
+
+//scroll page
+html ::-webkit-scrollbar {
+    border-radius: 0px;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+html ::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 //font-tiktok
 
 @font-face {
-  font-family: TikTokFont;
-  src: url('/assets/fonts/TikTokFont-Regular.woff2');
-  font-weight: 400;
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: TikTokFont;
-  src: url('/assets/fonts/TikTokFont-Semibold.woff2');
-  font-weight: 600;
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
 }
 
 @font-face {
-  font-family: TikTokFont;
-  src: url('/assets/fonts/TikTokFont-Bold.woff2');
-  font-weight: 700;
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
 }
 
 @font-face {
-  font-family: TikTokDisplayFont;
-  src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
-  font-weight: 700;
+    font-family: TikTokDisplayFont;
+    src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
 }
 
 button,
 input,
 [tabindex] {
-  border: none;
-  outline: none;
+    border: none;
+    outline: none;
 }
 
 a[href] {
-  color: var(--white);
-  text-decoration: none;
+    color: var(--white);
+    text-decoration: none;
 }

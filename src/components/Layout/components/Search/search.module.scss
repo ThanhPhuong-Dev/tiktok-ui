@@ -20,6 +20,7 @@
         background-color: transparent;
         font-size: 1.6rem;
         color: var(--text-color);
+        font-family: var(--font-family);
     }
 
     input:not(:placeholder-shown) ~ .search__btn {

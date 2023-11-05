@@ -1,21 +1,21 @@
-.header{
+.header {
     position: relative;
     height: 50px;
     margin-top: -8px;
     display: flex;
     align-items: center;
 }
-.arrow{
+.arrow {
     width: 20px;
     height: 20px;
     color: white;
     margin-left: 15px;
     cursor: pointer;
 }
-.title{
+.title {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     color: white;
 }

@@ -3,14 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 }
 
 .container{
     width: 1150px;
     display: flex;
-  
 }
-
 .content{
-    flex: 1;
+    height: 2000px;
+    // flex: 1;
 }
