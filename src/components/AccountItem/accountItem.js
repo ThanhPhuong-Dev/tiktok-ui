@@ -1,3 +1,4 @@
+import ProTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,7 @@ import Images from '../Image/image';
 const cx = classNames.bind(styles);
 function AccountItem({ user }) {
     return (
-        <Link to ={`/@${user.nickname}`} className={cx('wrapper')}>
+        <Link to={`/@${user.nickname}`} className={cx('wrapper')}>
             <Images className={cx('avatar')} src={user.avatar} alt={user.last_name}></Images>
             <div className={cx('info')}>
                 <p className={cx('name')}>
@@ -21,5 +22,9 @@ function AccountItem({ user }) {
         </Link>
     );
 }
+
+AccountItem.proTypes = {
+    user: ProTypes.object.isRequired,
+};
 
 export default AccountItem;

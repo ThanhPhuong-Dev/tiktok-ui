@@ -1,5 +1,8 @@
 .wrapper {
-    display: inline-flex;
+    // display: inline-flex;
+    display: block;
+    text-align: center;
+    // justify-content: center;
     font-size: 1.6rem;
     font-weight: 700;
     font-family: var(--font-family);
@@ -43,6 +46,7 @@
 .title + .icon {
     margin-left: 10px;
 }
+
 .rounded {
     color: var(--white);
     border-radius: 999px;

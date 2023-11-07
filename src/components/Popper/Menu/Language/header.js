@@ -1,3 +1,4 @@
+import ProTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,12 +7,17 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function Language({ title, onBack }) {
-  return (
-    <header className={cx('header')}>
-      <FontAwesomeIcon icon={faChevronLeft} className={cx('arrow')} onClick={onBack} />
-      <h4 className={cx('title')}>{title}</h4>
-    </header>
-  );
+    return (
+        <header className={cx('header')}>
+            <FontAwesomeIcon icon={faChevronLeft} className={cx('arrow')} onClick={onBack} />
+            <h4 className={cx('title')}>{title}</h4>
+        </header>
+    );
 }
+
+Language.proTypes = {
+    title: ProTypes.string,
+    onBack: ProTypes.func,
+};
 
 export default Language;

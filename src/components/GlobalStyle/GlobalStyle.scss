@@ -10,6 +10,7 @@
     --font-family: 'TikTokFont', sans-serif;
     --default-layout-header-width: 1150px;
     --default-layout-header-heigth: 60px;
+    --default-layout-horizontal-spacer: 24px;
     --color-search-header: rgba(255, 255, 255, 0.253);
 }
 * {
@@ -30,32 +31,20 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     overflow-y: overlay;
+    background: #121212;
+    color: var(--text-color);
 }
 
 //scroll page
-html ::-webkit-scrollbar {
-    border-radius: 0px;
-    width: 8px;
-}
 
 html *::-webkit-scrollbar {
     border-radius: 0;
     width: 8px;
 }
 
-html ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-html ::-webkit-scrollbar-track {
-    border-radius: 0px;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(104, 103, 103, 0.3);
 }
 
 html *::-webkit-scrollbar-track {

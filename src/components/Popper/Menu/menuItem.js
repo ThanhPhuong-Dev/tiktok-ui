@@ -4,16 +4,16 @@ import styles from './menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MenuItem({ data ,onClick}) {
-  const classNames = cx('more-item',{
-    separate :data.separate,
-  })
+function MenuItem({ data, onClick }) {
+    const classNames = cx('more-item', {
+        separate: data.separate,
+    });
 
-  return (
-    <MyButton className={classNames} leftIcon={data.icon} to={data.to} onClick={onClick}>
-      {data.title}
-    </MyButton>
-  );
+    return (
+        <MyButton className={classNames} leftIcon={data.icon} to={data.to} onClick={onClick}>
+            {data.title}
+        </MyButton>
+    );
 }
 
 export default MenuItem;

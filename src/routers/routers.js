@@ -1,20 +1,24 @@
 //HeaderOnly
-import { Headeronly } from '~/components/Layout';
+import { Headeronly } from '~/Layout';
 
-import { RouterConfig } from '~/routerConfig/config';
+import config from '~/routerConfig/config';
 //Pages
 import Home from '~/pages/Home/home.js';
 import Following from '~/pages/Following/following.js';
 import ProFile from '~/pages/Profile/profile';
 import Upload from '~/pages/Upload/upload';
 import Search from '~/pages/Search/search';
+import Live from '~/pages/Live/live';
+import Explore from '~/pages/Explore/explore';
 
 const publicRouters = [
-    { path: RouterConfig.home, element: Home },
-    { path: RouterConfig.following, element: Following },
-    { path: RouterConfig.profile, element: ProFile },
-    { path: RouterConfig.upload, element: Upload, layout: Headeronly },
-    { path: RouterConfig.search, element: Search, layout: null },
+    { path: config.routes.home, element: Home },
+    { path: config.routes.following, element: Following },
+    { path: config.routes.exploree, element: Explore },
+    { path: config.routes.live, element: Live },
+    { path: config.routes.profile, element: ProFile },
+    { path: config.routes.upload, element: Upload, layout: Headeronly },
+    { path: config.routes.search, element: Search, layout: null },
 ];
 
 const privateRouters = [];

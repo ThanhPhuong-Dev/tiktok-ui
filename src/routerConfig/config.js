@@ -1,7 +1,7 @@
-export const RouterConfig = {
-    home: '/',
-    following: '/following',
-    profile: '/:nickname',
-    upload: '/upload',
-    search: '/search',
+import routes from './Routes';
+
+const config = {
+    routes,
 };
+
+export default config;

@@ -1,0 +1,28 @@
+.wrapper {
+    padding: 16px 0;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.12);
+        transform: scaleY(0.5);
+    }
+}
+.label {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #c4c4c4;
+}
+
+.see-more{
+    font-size: 14px;
+    color: rgb(255, 59, 92);
+    margin-top: 5px;
+    cursor: pointer;
+}
