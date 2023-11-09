@@ -10,20 +10,25 @@ import {
     faGear,
     faCoins,
     faRightFromBracket,
+    faLaptopFile,
+    faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import HandlessTippy from '@tippyjs/react/headless';
+import { Wrapper as PopperWrapper } from '~/components/Popper/popper';
 
 import classNames from 'classnames/bind';
 import styles from './header.module.scss';
 import images from '~/assets/images/images';
 import MyButton from '~/components/Button/button';
 import Menu from '~/components/Popper/Menu/menu';
-import { InBox, Message } from '~/components/Icon/icon';
+import { InBox, Message, PhoneIcon } from '~/components/Icon/icon';
 import Images from '~/components/Image/image';
 import Search from '../Search/search';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -89,6 +94,23 @@ const userMenu = [
 ];
 
 function Header() {
+    const [download, setDownload] = useState(false);
+
+    const handleDownload = () => setDownload(!download);
+    const showPhone = (attrs) => (
+        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+            <PopperWrapper>
+                <div className={cx('phone')}>
+                    <FontAwesomeIcon icon={faLaptopFile} className={cx('phone-icon')} />
+                    <p className={cx('phone-title')}>Ứng dụng TikTok cho máy tính</p>
+                    <button className={cx('phone-download')} onClick={handleDownload}>
+                        {download ? <FontAwesomeIcon icon={faSpinner} className={cx('icon')} /> : 'Tải Về'}
+                    </button>
+                </div>
+            </PopperWrapper>
+        </div>
+    );
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -109,6 +131,11 @@ function Header() {
                             <MyButton text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                                 Upload
                             </MyButton>
+                            <HandlessTippy interactive placement="bottom" render={showPhone}>
+                                <div className={cx('action-btn')}>
+                                    <PhoneIcon></PhoneIcon>
+                                </div>
+                            </HandlessTippy>
 
                             <Tippy content="Message" placement="bottom">
                                 <a href="/message" className={cx('action-btn')}>

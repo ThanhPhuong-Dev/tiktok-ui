@@ -13,6 +13,8 @@
     display: flex;
 }
 .content {
-    height: 2000px;
-    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 356px;
 }

@@ -86,3 +86,48 @@
 .avatar {
     width: 100%;
 }
+
+//render HandlessTippy
+
+.phone {
+    min-width: 216px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 21px;
+}
+.phone-icon {
+    width: 116px;
+    height: 100px;
+    text-align: center;
+}
+.icon {
+    font-size: 20px;
+    animation: 1s sipner linear infinite;
+}
+
+@keyframes sipner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.phone-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 8px;
+}
+.phone-download {
+    margin-top: 8px;
+    padding: 12px 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--primary);
+    height: 46px;
+    cursor: pointer;
+}

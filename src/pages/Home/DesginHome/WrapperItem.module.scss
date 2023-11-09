@@ -1,0 +1,22 @@
+.container {
+    // display: flex;
+    // justify-content: center;
+    min-width: 700px;
+    margin-left: 50px;
+    overflow-y: auto;
+    // position: relative;
+    // top: 0;
+    // left: 356px;
+}
+
+.title {
+    text-align: center;
+    padding: 40px 0;
+    color: rgb(255, 59, 92);
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--primary);
+    }
+}

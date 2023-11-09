@@ -4,4 +4,9 @@
     display: flex;
     flex-direction: column;
     padding: 20px 0 26px 0;
+    position: fixed;
+    top: var(--default-layout-header-heigth);
+    max-height: 100vh;
+    overflow: scroll;
+    z-index: 9;
 }
