@@ -1,11 +1,11 @@
 import * as httpRequest from '~/util/httpRequest';
 
-export const searchAPi = async (q, type = 'less') => {
+export const getSuggestAPI = async ({ page, perPage }) => {
     try {
-        const res = await httpRequest.get(`users/search`, {
+        const res = await httpRequest.get(`users/suggested`, {
             params: {
-                q,
-                type,
+                page,
+                per_page: perPage,
             },
         });
         return res.data;

@@ -1,0 +1,42 @@
+.wrapper {
+}
+
+.btn {
+    // position: relative;
+    // left: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 300px;
+    height: 52px;
+    background: linear-gradient(to right, #020024, #171f57, #090979);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.icon{
+    margin-right: 10px;
+}
+
+.info {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.info-item {
+    color: #ccc;
+    margin: 5px 6px 0 0;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.title {
+    font-size: 12px;
+    margin-top: 6px;
+}

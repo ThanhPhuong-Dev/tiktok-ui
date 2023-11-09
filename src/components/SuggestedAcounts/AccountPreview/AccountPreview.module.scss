@@ -1,13 +1,13 @@
 .wrapper {
     min-width: 320px;
     padding: 20px;
-    margin-top: 8px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
 }
 
 .avatar {
@@ -15,13 +15,14 @@
     height: 44px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
 }
 
 .btn {
     min-width: 106px;
     height: 36px;
     padding: 6px 8px;
+    background-color: rgba(255, 255, 255, 0.08);
 }
 .info {
     display: flex;

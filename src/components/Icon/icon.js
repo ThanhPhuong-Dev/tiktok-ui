@@ -279,3 +279,4 @@ export const IconCheck = (width = '1em', height = '1em', className) => {
         </defs>
     </svg>;
 };
+

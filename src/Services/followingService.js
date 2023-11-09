@@ -1,11 +1,10 @@
 import * as httpRequest from '~/util/httpRequest';
 
-export const searchAPi = async (q, type = 'less') => {
+export const getFollowingAPI = async ({ page }) => {
     try {
-        const res = await httpRequest.get(`users/search`, {
+        const res = await httpRequest.get(`me/followings`, {
             params: {
-                q,
-                type,
+                page,
             },
         });
         return res.data;
