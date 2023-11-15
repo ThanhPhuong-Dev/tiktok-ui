@@ -1,6 +1,7 @@
 import ProTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './homeItem.module.scss';
+import styles from './content.module.scss';
+
 import Images from '~/components/Image/image';
 import MyButton from '~/components/Button/button';
 import { Link } from 'react-router-dom';
@@ -10,18 +11,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faCommentDots, faBookmark, faShare } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
-
-function HomeItem({ data }) {
-    console.log(data);
+function ContentItem({ data }) {
     const [follow, setFollow] = useState(false);
     const [heart, setHeart] = useState(false);
+    const [favorites, setFavorites] = useState(false);
     const hanleFollow = () => {
         setFollow(!follow);
     };
 
-    const handleHeart = ()=>{
-        setHeart(!heart)
-    }
+    const handleHeart = () => {
+        setHeart(!heart);
+    };
+
+    const handleFavorites = () => {
+        setFavorites(!favorites);
+    };
     return (
         <div className={cx('content-item')}>
             <div>
@@ -60,8 +64,16 @@ function HomeItem({ data }) {
                         </div>
                         <strong className={cx('action-title')}>{data.likes_count}K</strong>
 
-                        <div className={cx('action-item')}>
-                            <FontAwesomeIcon icon={faBookmark} className={cx('action-icon')} />
+                        <div className={cx('action-item')} onClick={handleFavorites}>
+                            {!favorites ? (
+                                <FontAwesomeIcon icon={faBookmark} className={cx('action-icon')} />
+                            ) : (
+                                <FontAwesomeIcon
+                                    style={{ color: 'yellowgreen' }}
+                                    icon={faBookmark}
+                                    className={cx('action-icon')}
+                                />
+                            )}
                         </div>
                         <strong className={cx('action-title')}>{data.user_id}K</strong>
                         <div className={cx('action-item')}>
@@ -75,8 +87,8 @@ function HomeItem({ data }) {
     );
 }
 
-HomeItem.propTypes = {
+ContentItem.propTypes = {
     data: ProTypes.object.isRequired,
 };
 
-export default HomeItem;
+export default ContentItem;

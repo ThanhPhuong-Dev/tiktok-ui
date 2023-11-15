@@ -1,0 +1,29 @@
+.container {
+    padding: 20px 0;
+    overflow: scroll;
+}
+.title {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+.title button {
+    padding: 10px 12px;
+    background-color: #252525;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f1f1f1;
+        color: black;
+    }
+}
+
+.content {
+    width: 880px;
+}

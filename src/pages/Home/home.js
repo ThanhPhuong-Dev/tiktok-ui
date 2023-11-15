@@ -2,18 +2,17 @@ import classNames from 'classnames/bind';
 import styles from './home.module.scss';
 import * as VideoServices from '~/Services/VideoServices';
 import { useEffect, useState } from 'react';
-import WrapperHome from './DesginHome/Wrapperhome';
+import WrapperContainer from '../../components/DesginContainer/WrapperContainer';
 
 const cx = classNames.bind(styles);
 
-const INT_PAGE = Math.floor(Math.random() * 38);
-
 function Home() {
+    const INT_PAGE = Math.floor(Math.random() * 38);
     const [videos, setVideos] = useState([]);
     const [page, setPage] = useState(INT_PAGE);
 
     useEffect(() => {
-        VideoServices.videoAPI({ type: 'for-you', page: INT_PAGE })
+        VideoServices.videoAPI({ type: 'for-you', page: page })
             .then((data) => setVideos((prev) => [...prev, ...data]))
             .catch((error) => console.log(error));
     }, [page]);
@@ -25,7 +24,7 @@ function Home() {
     };
     return (
         <div className={cx('container')}>
-            <WrapperHome data={videos} onShowVideo={handleShowVideo}></WrapperHome>
+            <WrapperContainer data={videos} onShowVideo={handleShowVideo}></WrapperContainer>
         </div>
     );
 }

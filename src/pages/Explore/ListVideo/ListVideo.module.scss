@@ -1,0 +1,54 @@
+.wrapper {
+    width: 266px;
+    flex-basis: calc(40.33% - 20px);
+    padding-bottom: 8px;
+    margin: 0 20px 20px 0;
+    height: 500px;
+}
+
+.videos {
+    border-radius: 8px;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.videos video {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    margin-top: 10px;
+    font-size: 16px;
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+    overflow: hidden; /* Ẩn phần chữ vượt quá container */
+    text-overflow: ellipsis;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.name {
+}
+
+.icon {
+}
